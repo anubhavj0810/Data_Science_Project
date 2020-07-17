@@ -124,11 +124,11 @@
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
     
-    <div class="container-fluid" style="padding-right: 15px!important">
+    <div class="container-fluid" style="padding-right: 15px!important;margin:0">
 
       <!-- Three columns of text below the carousel -->
-      <div class="row bd-highlight" style="margin-right: 65px;!important">
-          <div class="col-sm-5 offset-md-1 shadow mb-5 bg-white rounded" style="background-image: linear-gradient( white, #ABB0B2)">
+      <div class="row bd-highlight" style="margin-right: 65px;!important;margin:0">
+          <div class="col-sm-8 offset-md-1 shadow mb-5 bg-white rounded" style="background-image: linear-gradient( white, #ABB0B2)">
             <img class="rounded-circle mb-3" src="../static/Capture.PNG" alt="Generic placeholder image" width="140" height="140">
             <h2>Analysis Graphs on Indian Political tweets in Recent Time</h2>
             <p>If you want to see statistics of Recent Indian Politics related tweets in Twitter then enter Yes else if you want to see statistics of Whole Data then enter No </p>
@@ -139,20 +139,6 @@
               <button type="submit" class="btn btn-dark" align="centre">Submit</button>
             </form>
           </div>
-
-          <div class="col-sm-5 offset-md-1 shadow mb-5 bg-white rounded" style="background-image: linear-gradient( white, #ABB0B2);">
-              <img class="rounded-circle mb-3" src="../static/download%20(4).jpg" alt="Generic placeholder image" width="140" height="140">
-              <h2>Reply Tree for famous Political Party/Person Tweet</h2>
-              <p>The Reply tree shows the people replying to a latest tweet of the entered personality and replies to their tweets and so on in a Tree kind of format. Enter the Screen Name of the Political Party/Personality whose Reply Tree you want to see(eg. @BJP4India,@INCIndia,@AamAadmiParty)
-              </p>
-              <form action="{{url_for('reply')}}" method="post" style="text-align: left;" enctype="multipart/form-data">
-                <div class="form-group">
-                  <textarea class="form-control" rows="1" placeholder="Enter the Screen Name on Twitter" name="name" type="text" required></textarea>
-                </div>
-                <!-- <input type="number" name="count" placeholder="Enter the no. of tweets"> -->
-                <button type="submit" class="btn btn-dark" align="centre">Submit</button>
-              </form>
-      </div>
       </div>
     </div>
 
