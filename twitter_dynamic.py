@@ -16,7 +16,7 @@ import datetime as dt
 import multiprocessing
 from multiprocessing import Process
 import sys
-import time
+#import time
 
 print("Default encoding is .. ",sys.getdefaultencoding())
 matplotlib.use('TkAgg')
@@ -42,7 +42,7 @@ fig2.set_size_inches(20, 15)
 fig3.set_size_inches(20, 15)
 fig4.set_size_inches(20, 15)
 
-politics = ["Modi" ,"Narendra Modi ", "PMO India ", "Arvind Kejriwal ", "Arun Jaitley ", "Amit Shah ", "Sushma Swaraj ", "Rajnath Singh ", "BJP ","Bhartiya Janata Party","Bhartiya Janta Party ", "Akhilesh Yadav ", "Smriti Z Irani ", "Rahul Gandhi ", "Subramanian Swamy ", "Shashi Tharoor ", "Manohar Parrikar ", "ShivrajSingh Chouhan ", "Piyush Goyal ", "AAP ","Aam Aadmi Party", "Indian National Congress ", "Lalu Prasad Yadav ", "Nitin Gadkari ", "N Chandrababu Naidu ", "Vasundhara Raje ", "Devendra Fadnavis ", "Yogi Adityanath ", "Omar Abdullah ", "Ravi Shankar Prasad ", "HMO India ", "CM Office, GoUP ", "Nandan Nilekani ", "Vijay Rupani ", "Dr Raman Singh ", "Kapil Sibal ", "Nirmala Sitharaman ", "Raveesh Kumar ", "Kalam Center ", "Aaditya Thackeray ", "Sushil Kumar Modi ", "Manish Sisodia ", "Dr. Harsh Vardhan ", "Milind Deora ", "Samajwadi Party ", "Shahnawaz Hussain ", "Vijay Kumar Singh ", "Prakash Javadekar ", "Tejashwi Yadav "]
+politics = ["Modi" ,"Narendra Modi ", "PMO India ", "Arvind Kejriwal ", "Arun Jaitley ", "Amit Shah ", "Sushma Swaraj ", "Rajnath Singh ", "BJP ","Bhartiya Janata Party","Bhartiya Janta Party ", "Akhilesh Yadav ", "Smriti Z Irani ", "Rahul Gandhi ", "Subramanian Swamy ", "Shashi Tharoor ", "Manohar Parrikar ", "ShivrajSingh Chouhan ", "Piyush Goyal ", "AAP ","Aam Aadmi Party", "Indian National Congress ", "Lalu Prasad Yadav ", "Nitin Gadkari ", "N Chandrababu Naidu ", "Vasundhara Raje ", "Devendra Fadnavis ", "Yogi Adityanath ", "Omar Abdullah ", "Ravi Shankar Prasad ", "HMO India ", "CM Office, GoUP ", "Nandan Nilekani ", "Vijay Rupani ", "Dr Raman Singh ", "Kapil Sibal ", "Nirmala Sitharaman ", "Raveesh Kumar ", "Kalam Center ", "Aaditya Thackeray ", "Sushil Kumar Modi ", "Manish Sisodia ", "Dr. Harsh Vardhan ", "Milind Deora ", "Samajwadi Party ", "Shahnawaz Hussain ", "Vijay Kumar Singh ", "Prakash Javadekar ", "Tejashwi Yadav ","Dravida Munnetra Kazhagam "]
 politics1 = ['bjp', 'aap', 'bhajpaa', 'bhartiya janata party', 'aam aadmi party',
            'bahujan samaj party', 'Samajwadi Party', 'AIADMK', 'DMK', 'Trinamool Congress', 'Shiv Sena',
            'Nationalist Congress Party', 'Biju Janata Dal', 'Janata Dal United', 'JDU', 'Rastriya Janata Dal', 'RJD',
@@ -97,7 +97,7 @@ def Hashtags_tweets(time_int):
         else:
             time_min.append(tweets_twi['text'][len(a) - x_temp])
             time_min_time.append(tweets_twi['time'][len(a) - x_temp])
-            x_temp=x_temp+1
+            x_temp=x_temp + 1
 
     for i in range(len(a)-x_temp-1,-1,-1):
         #count_var = count_var + 1
@@ -541,6 +541,6 @@ if __name__ == '__main__':
 
     while (True):
         try:
-            stream.filter(track=politics, locations=[68.1766451354, 7.96553477623, 97.4025614766, 35.4940095078], languages=['en', 'hi', 'tl'], filter_level='low')
+            stream.filter(track=politics, locations=[68.1766451354, 7.96553477623, 97.4025614766, 35.4940095078], languages=['en', 'hi', 'tl', 'bn', 'bh', 'gu', 'kn', 'ks', 'ml', 'mr', 'pa', 'sa', 'ta', 'te'], filter_level='low')
         except (ProtocolError, AttributeError,ReadTimeoutError):
             continue;
