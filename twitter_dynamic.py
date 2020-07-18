@@ -141,7 +141,6 @@ def Hastag_extract(tweets_array):
 def Word_cloud(all_words):
     all_words = " ".join(all_words)
     word_cloud = WordCloud(width=800,height=500,random_state=21,max_font_size=110).generate(all_words)
-
     plt.imshow(word_cloud,interpolation='bilinear')
     plt.axis('off')
 
@@ -305,6 +304,11 @@ class StdOutListener(StreamListener):
             choices_party1[i] += 1
 
         Modelling_data(tweets_twi,ax,ax1,ax2,ax3,'Top 3 Languages','Top 5 Countries','Top 5 locations','Top 5 TwitterUsers')
+        Word_cloud(Hastag_extract(tweets_twi['text']))
+        if(count_temp % 10 == 0):
+            plt.savefig('/Users/anubhavjain/Desktop/Flask2/static/Overall_Popular_Hastags.jpg')
+            # plt.close()
+            # plt.figure()
         party = dict(sorted(choices_party1.items(), key=lambda x: x[1], reverse=True)[:5])
         ax4.tick_params(axis='x', labelsize=15)
         ax4.tick_params(axis='y', labelsize=10)
@@ -394,6 +398,7 @@ class StdOutListener(StreamListener):
 
             Modelling_data(tweets_twi_10, ax5, ax6, ax7, ax8, 'Top 3 Languages recently','Top 5 Countries recently', 'Top 5 locations recently', 'Top 5 TwitterUsers recently')
             Word_cloud(Hastag_extract(hash_10))
+            # print(tweets_twi_10)
 
             party1 = dict(sorted(choices_party_live.items(), key=lambda x: x[1], reverse=True)[:5])
             ax9.tick_params(axis='x', labelsize=15)
@@ -480,6 +485,7 @@ if __name__ == '__main__':
     tweets_twi['user_loc'] = tweets_twi['user_loc'].replace('USA','UNITED STATES')
     tweets_twi['user_loc'] = tweets_twi['user_loc'].replace('BOMBAY','MUMBAI')
     tweets_twi['user_loc'] = tweets_twi['user_loc'].replace('BANGALORE','BENGALURU')
+    tweets_twi['user_loc'] = tweets_twi['user_loc'].replace('DELHI', 'NEW DELHI')
 
     for i in tweets_data:
         key_arr = Geo_Party(i['text'])
