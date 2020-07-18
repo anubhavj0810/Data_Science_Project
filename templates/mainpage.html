@@ -19,6 +19,7 @@
       user-select: none;
     }
 
+    
     @media (min-width: 768px) {
       .bd-placeholder-img-lg {
         font-size: 3.5rem;
@@ -31,7 +32,7 @@
 
 </head>
 
-<body>
+<body style="font-family: montserrat;">
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid mx-5">
       <a class="navbar-brand font-weight-bold" href="/">Telectiya</a>
@@ -124,14 +125,15 @@
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
     
-    <div class="container-fluid" style="padding-right: 15px!important;margin:0">
+    <div class="container-fluid" style="padding-right: 0px!important;">
 
       <!-- Three columns of text below the carousel -->
-      <div class="row bd-highlight" style="margin-right: 65px;!important;margin:0">
-          <div class="col-sm-8 offset-md-1 shadow mb-5 bg-white rounded" style="background-image: linear-gradient( white, #ABB0B2)">
+      <div class="row bd-highlight justify-content-center" style="margin: 0px!important;">
+          <div class="col-sm-8 shadow mb-5 bg-white rounded" style=" padding-top: 15px;padding-bottom: 15px; background-image: linear-gradient(  #4d97fb ,  #a6edc9 )">
             <img class="rounded-circle mb-3" src="../static/Capture.PNG" alt="Generic placeholder image" width="140" height="140">
             <h2>Analysis Graphs on Indian Political tweets in Recent Time</h2>
-            <p>If you want to see statistics of Recent Indian Politics related tweets in Twitter then enter Yes else if you want to see statistics of Whole Data then enter No </p>
+            <p>If you want to see statistics of Recent Indian Politics related tweets in Twitter then enter 
+              <b>Yes</b> <br> If you want to see statistics of Whole Data then enter <b>No</b> </p>
             <form action="{{url_for('index')}}" method="post" class="text-left" enctype="multipart/form-data">
               <div class="form-group border border-bg-dark rounded p-3", style="text-align: left; background: white;">
                 <textarea class="form-control" rows="1" placeholder="Enter your Choice" name="name" type="text" required></textarea>
